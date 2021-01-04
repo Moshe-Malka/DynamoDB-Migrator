@@ -24,4 +24,4 @@ def lambda_handler(event):
         bucket_owner = os.environ['BUCKET_OWNER']
         prefix = f"ddb_migrations/{table_name}/"
         response = export_to_s3(table_arn, bucket_name, bucket_owner, prefix)
-    retrun { 'table_name': table_name, 'export_operation': response }
+    return { 'table_name': table_name, 'export_operation': response }
